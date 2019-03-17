@@ -19,13 +19,15 @@ This package is still at documentation stage and thus is empty. Once the docs ar
 
 # Usage
 
+Save a new `TCompany` object:
+
 ````
 use Spacemudd\Takamol\TCompany;
 
 $tCompany = TCompany::createFromLaborOfficeId(1000);
 ````
 
-Save a new `TakamolEmployee` object.
+Save a new `TakamolEmployee` object:
 
 ````
 $tEmployee = new TakamolEmployee();
@@ -36,19 +38,17 @@ $tEmployee->save();
 $tEmployee->attach($tCompany);
 ````
 
-Store activities related to the employee.
+Store activities related to the employee:
 
-`dispatch(new TakamolLoginEvent($tEmployee, $authClass));`
+````
+dispatch(new TakamolLoginEvent($tEmployee, $authClass));
+dispatch(new TakamolLogoutEvent($tEmployee, $authClass));
+dispatch(new TakamolAssignTaskEvent($tEmployee, $refClass));
+dispatch(new TakamolCompletedTaskEvent($tEmployee, $refClass));
+dispatch(new TakamolActivityLevelEvent($tEmployee, 37.00));
+````
 
-`dispatch(new TakamolLogoutEvent($tEmployee, $authClass));`
-
-`dispatch(new TakamolAssignTaskEvent($tEmployee, $refClass));`
-
-`dispatch(new TakamolCompletedTaskEvent($tEmployee, $refClass));`
-
-`dispatch(new TakamolActivityLevelEvent($tEmployee, 37.00));`
-
-To export an Excel report.
+To export an Excel report:
 
 ````
 use Spacemudd\Takamol\TCompany;
