@@ -1,0 +1,27 @@
+{
+    "name": "spacemudd/laravel-takamol",
+    "description": "Laravel Takamol API Integration",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shafiq al-Shaar",
+            "email": "hello@getshafiq.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^5.8",
+        "phpunit/phpunit": "^8.0",
+        "orchestra/testbench": "^3.8"
+    },
+    "autoload": {
+      "psr-4": {
+        "Spacemudd\\STakamol\\": "src"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Spacemudd\\STakamol\\Test\\": "tests"
+      }
+    }
+}
